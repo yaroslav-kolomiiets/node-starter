@@ -1,0 +1,93 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:recommended", "tslint-sonarts", "tslint-config-prettier"],
+  "jsRules": {},
+  "rules": {
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "public-static-field",
+          "public-static-method",
+          "protected-static-field",
+          "protected-static-method",
+          "private-static-field",
+          "private-static-method",
+          "public-instance-field",
+          "protected-instance-field",
+          "private-instance-field",
+          "public-constructor",
+          "protected-constructor",
+          "private-constructor",
+          "public-instance-method",
+          "protected-instance-method",
+          "private-instance-method"
+        ],
+        "alphabetize": true
+      }
+    ],
+    "member-access": [true, "no-public"],
+    "no-console": [true, "log", "debug", "info", "time", "timeEnd", "trace"],
+    "no-empty": [true, "allow-empty-catch"],
+    "no-redundant-jsdoc": true,
+    "no-string-literal": true,
+    "no-floating-promises": true,
+    "prefer-while": true,
+    "no-any": true,
+    "interface-name": true,
+    "jsdoc-format": [true, "check-multiline-start"],
+    "no-duplicate-imports": true,
+
+    // tslint-eslint-rules
+    "no-constant-condition": true,
+    "no-control-regex": true,
+    "no-duplicate-case": true,
+    "no-empty-character-class": true,
+    "no-ex-assign": true,
+    "no-extra-boolean-cast": true,
+    "no-inner-declarations": true,
+    "no-invalid-regexp": true,
+    "no-regex-spaces": true,
+    "no-unexpected-multiline": true,
+    "valid-typeof": true,
+    "ter-no-proto": true,
+    "ter-no-script-url": true,
+    "ter-no-self-compare": true,
+
+    // vrsource-tslint-rules
+    "ext-variable-name": [
+      true,
+      ["class", "pascal"],
+      ["interface", "pascal", { "regex": "^I.*$" }],
+      ["parameter", "camel"],
+      ["property", "static", "camel"],
+      ["property", "private", "camel", "allow-leading-underscore"],
+      ["property", "protected", "camel", "allow-leading-underscore"],
+      ["variable", "local", "camel"],
+      ["variable", "const", "camel"],
+      ["variable", "camel"],
+      ["method", "private", "camel", "allow-leading-underscore"],
+      ["method", "protected", "camel", "allow-leading-underscore"],
+      ["function", "camel", "ban-keywords"],
+      ["default", "camel"]
+    ],
+    "max-params": [true, 3],
+    "prefer-case-blocks": true,
+    "prefer-literal": [true, "object", "function", "array"],
+
+    // tslint-sonarts
+    "mccabe-complexity": true,
+    "no-empty-nested-blocks": true,
+    "no-inconsistent-return": true,
+    "no-nested-incdec": true,
+
+    // prettier rules
+    "prettier": true
+  },
+  "rulesDirectory": [
+    "node_modules/vrsource-tslint-rules/rules",
+    "node_modules/tslint-eslint-rules/dist/rules",
+    "node_modules/tslint-sonarts/lib/rules",
+    "tslint-plugin-prettier"
+  ]
+}
